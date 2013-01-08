@@ -844,7 +844,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cce9f7', end
 	margin:25px 0 0 0;
 	*margin:15px 0 0 0;
 }
-#ver-special ul li.redhead {
+#ver-special ul li.redhead, .redhead {
     list-style:none;
     background: none;
 	color:#E50202;
