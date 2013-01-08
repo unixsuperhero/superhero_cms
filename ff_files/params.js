@@ -1,0 +1,1 @@
+paramData="name=Need Help Generic Auto Invite;type=5;startX=600;startY=352;closeX=25;closeY=25;closetip=No Thanks;fade=N;leave=Y;sound=;";invJSLoaded();
