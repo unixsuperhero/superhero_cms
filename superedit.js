@@ -1,20 +1,30 @@
 SUPER_ELEMENT = null
 $(document).ready( function(){
-  $('.superimg').each(function(i,e) {
-    $(e).click(function(e){
-      SUPER_ELEMENT = e
-      alert('load image changer here (src,alt,maybe even uploader)');
-      return false;
+  USE_SUPER_POWERS = function() {
+    $('.superimg').each(function(i,e) {
+      $(e).click(function(e){
+        SUPER_ELEMENT = e
+        alert('load image changer here (src,alt,maybe even uploader)');
+        return false;
+      });
     });
-  });
 
-  $('.superedit').each(function(i,e) {
-    $(e).attr('contentEditable', 'true');
-  });
+    $('.superedit').each(function(i,e) {
+      $(e).attr('contentEditable', 'true');
+    });
+  };
 
-  $('.supergroup').each(function(i,e) {
+  // MAYBE $(.superitem) should be in _POWERS ^
+  // because it is a part of the init super setup
+  // then, we should have a function for saving?
+  // that differentiates between partials and
+  // standalone items.
+  // or, serverside, we can inject a list of
+  // all the super-type attributes we accept
+  // for this particular template
+
     /******************************************************************
-     * MIGHT NOT NEED THIS GROUPING
+     * MIGHT NOT NEED THIS $('.supergroup') GROUPING
      *   .superitem can have an attr that says:
      *   item_type (basically, partial name)
      *   so classes would work as usual (.super{edit,img})
@@ -22,11 +32,6 @@ $(document).ready( function(){
      *   will be grouped into an array, with a key of the
      *   specified type
      ******************************************************************/
-    //$(e).mouseover(function(){
-    //  alert($(e).children().length);
-    //  $(e).prepend('<a href="#" class="superadd">Add</a>');
-    //});
-  });
 
   $('.superitem').each(function(i,e) {
     $(e).click(function(){
@@ -41,4 +46,6 @@ $(document).ready( function(){
     //  $(e).children('.superremove').remove();
     //});
   });
+
+  USE_SUPER_POWERS();
 });
