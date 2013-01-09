@@ -2,15 +2,18 @@ SUPER_ELEMENT = null
 $(document).ready( function(){
   USE_SUPER_POWERS = function() {
     $('.superimg').each(function(i,e) {
-      $(e).click(function(e){
-        SUPER_ELEMENT = e
-        alert('load image changer here (src,alt,maybe even uploader)');
+      $(e).click(function(ev){
+        SUPER_ELEMENT = this
+        // LOAD IMAGE_SWITCHER HERE
         return false;
       });
     });
 
     $('.superedit').each(function(i,e) {
       $(e).attr('contentEditable', 'true');
+      $(e).click(function(ev){
+        SUPER_ELEMENT = this
+      });
     });
   };
 
