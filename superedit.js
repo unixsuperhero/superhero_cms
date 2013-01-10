@@ -30,7 +30,7 @@ $(document).ready( function(){
       }
     }
 
-    $.get('_settings.html').complete(function(x,d,other) {
+    $.get('super_editor/_settings.html').complete(function(x,d,other) {
       append_return_value = $('body').append(x.responseText);
       $('#super_image_source').keyup(function(ev) {
         if(SUPER_IMAGE_TIMER != null) {
