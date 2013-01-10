@@ -65,5 +65,8 @@ body { padding-top: 220px; }
   text-align: right;
 }
 
+span.super_overlay {
+  background-color: black;
+}
 
 

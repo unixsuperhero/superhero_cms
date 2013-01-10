@@ -3,22 +3,17 @@ SUPER_IMAGE_TIMER = null
 $(document).ready( function(){
   USE_SUPER_POWERS = function() {
     $('a').click(function(){return false;});
-    $('.superimg').each(function(i,e) {
-      $(e).click(function(ev){
-        SUPER_ELEMENT = this
-        if($('#super_settings:hidden'))
-          $('#super_settings').show();
-        $('#super_image_source').focus();
-        // LOAD IMAGE_SWITCHER HERE
-        return false;
-      });
+
+    $('.superimg').click(function(ev){
+      SUPER_ELEMENT = this
+      if($('#super_settings:hidden')) $('#super_settings').show();
+      $('#super_image_source').focus();
+      return false;
     });
 
-    $('.superedit').each(function(i,e) {
-      $(e).attr('contentEditable', 'true');
-      $(e).click(function(ev){
-        SUPER_ELEMENT = this
-      });
+    $('.superedit').attr('contentEditable', 'true');
+    $('.superedit').click(function(ev){
+      SUPER_ELEMENT = this
     });
 
     update_image_preview_timer = function() {
