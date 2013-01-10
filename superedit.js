@@ -79,3 +79,16 @@ $(document).ready( function(){
 
   USE_SUPER_POWERS();
 });
+
+/***********************
+ ***********************
+ ** SAVE DYNAMIC DATA **
+ ***********************
+ ***********************/
+
+post_data = {};
+setup_post_data = function(i,e){
+  st = $(e).attr('super-type')
+  post_data[st] = post_data[st] || $([])
+};
+$('.superitem[super-type]').each(setup_post_data);
