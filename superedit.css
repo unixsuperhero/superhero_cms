@@ -1,0 +1,37 @@
+
+#super_settings {
+  display: none;
+  position:          fixed;
+  top:               10%;
+  left:              10%;
+  width:             80%;
+  height:        80%;
+  z-index:           100;
+  background-color:  rgba(250,250,250,0.9);
+  text-align: center;
+  overflow: scroll;
+  padding: 10px;
+}
+
+#super_image_preview {
+  display: none;
+}
+
+.super_spacer {
+  height: 10px;
+}
+
+.superedit {
+  border: dotted 2px lightblue;
+  padding: 2px;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.superimg {
+  border: dotted 2px lightblue !important;
+}
+
+.superitem {
+  border: dotted 2px lightpink;
+}
+

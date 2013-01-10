@@ -1,9 +1,14 @@
 SUPER_ELEMENT = null
+SUPER_IMAGE_TIMER = null
 $(document).ready( function(){
   USE_SUPER_POWERS = function() {
+    $('a').click(function(){return false;});
     $('.superimg').each(function(i,e) {
       $(e).click(function(ev){
         SUPER_ELEMENT = this
+        if($('#super_settings:hidden'))
+          $('#super_settings').show();
+        $('#super_image_source').focus();
         // LOAD IMAGE_SWITCHER HERE
         return false;
       });
@@ -15,6 +20,28 @@ $(document).ready( function(){
         SUPER_ELEMENT = this
       });
     });
+
+    update_image_preview_timer = function() {
+      if(super_image_source = $('#super_image_source').val()) {
+        $('#super_image_preview').show();
+        $('#super_image_preview').attr('src', super_image_source);
+      } else {
+        $('#super_image_preview').hide();
+      }
+    }
+
+    $.get('_settings.html').complete(function(x,d,other) {
+      append_return_value = $('body').append(x.responseText);
+      $('#super_image_source').keyup(function(ev) {
+        if(SUPER_IMAGE_TIMER != null) {
+          clearTimeout(SUPER_IMAGE_TIMER)
+          SUPER_IMAGE_TIMER = null;
+        }
+        SUPER_IMAGE_TIMER = setTimeout(update_image_preview_timer, 500);
+      });
+    });
+    //settings_container = '<div id="super_settings">&nbsp;</div>';
+    //append_return_value = $('body').append(settings_container);
   };
 
   // MAYBE $(.superitem) should be in _POWERS ^
