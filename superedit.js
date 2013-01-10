@@ -30,7 +30,11 @@ $(document).ready( function(){
       }
     }
 
-    $.get('super_editor/_settings.html').complete(function(x,d,other) {
+    $.get('super_editor/_super_editor.html').complete(function(x,d,other) {
+      $('body').prepend(x.responseText);
+    });
+
+    $.get('super_editor/_image_modal.html').complete(function(x,d,other) {
       append_return_value = $('body').append(x.responseText);
       $('#super_image_source').keyup(function(ev) {
         if(SUPER_IMAGE_TIMER != null) {
@@ -40,6 +44,7 @@ $(document).ready( function(){
         SUPER_IMAGE_TIMER = setTimeout(update_image_preview_timer, 500);
       });
     });
+
     //settings_container = '<div id="super_settings">&nbsp;</div>';
     //append_return_value = $('body').append(settings_container);
   };
